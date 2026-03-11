@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Memory Match Game</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#e8f5f9;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,80px);
+gap:10px;
+justify-content:center;
+margin-top:40px;
+}
+
+.card{
+width:80px;
+height:80px;
+background:#4CAF50;
+color:white;
+font-size:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Memory Match Game</h2>
+<p>Find the matching numbers</p>
+
+<div class="grid" id="game"></div>
+
+<script>
+
+let numbers = [1,1,2,2,3,3,4,4];
+numbers.sort(()=>0.5-Math.random());
+
+let first = null;
+let second = null;
+
+let grid = document.getElementById("game");
+
+numbers.forEach(num => {
+
+let card = document.createElement("div");
+card.className = "card";
+card.dataset.value = num;
+card.innerHTML = "?";
+
+card.onclick = function(){
+
+if(card.innerHTML !== "?") return;
+
+card.innerHTML = num;
+
+if(!first){
+first = card;
+}
+else{
+second = card;
+
+if(first.dataset.value !== second.dataset.value){
+
+setTimeout(()=>{
+first.innerHTML = "?";
+second.innerHTML = "?";
+first = null;
+second = null;
+},700);
+
+}
+else{
+first = null;
+second = null;
+}
+
+}
+
+};
+
+grid.appendChild(card);
+
+});
+
+</script>
+
+</body>
+</html>

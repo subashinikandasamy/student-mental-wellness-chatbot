@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SerenityAI</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js for Mood Graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>SerenityAI - Student Wellness Assistant</h1>
+
+<div class="chatbox">
+
+    <!-- Chat Messages -->
+    <div id="messages"></div>
+
+    <!-- User Input -->
+    <input type="text" id="userInput" placeholder="How are you feeling today?">
+
+    <!-- Send Button -->
+    <button onclick="sendMessage()">Send</button>
+
+    <br><br>
+
+    <!-- Relaxation Zone Button -->
+    <a href="relaxation.html">
+        <button>Open Relaxation Zone</button>
+    </a>
+
+</div>
+
+<br><br>
+
+<!-- Mood History Section -->
+<h2>Mood History</h2>
+
+<canvas id="moodChart" width="400" height="200"></canvas>
+
+<h2>Stress Level</h2>
+
+<p id="stressLevel">Stress Level: Normal</p>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

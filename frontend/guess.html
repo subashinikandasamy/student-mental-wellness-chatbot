@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Guess the Number</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#e8f5f9;
+}
+
+input{
+padding:10px;
+margin-top:20px;
+}
+
+button{
+padding:10px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Guess the Number</h2>
+<p>Guess a number between 1 and 10</p>
+
+<input type="number" id="guess">
+<button onclick="check()">Guess</button>
+
+<p id="result"></p>
+
+<script>
+
+let number = Math.floor(Math.random()*10)+1;
+
+function check(){
+
+let user = document.getElementById("guess").value;
+
+if(user == number){
+document.getElementById("result").innerHTML="Correct! Great job!";
+}
+else{
+document.getElementById("result").innerHTML="Try again!";
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Breathing Relaxation</title>
+
+<style>
+
+body{
+    text-align:center;
+    font-family:Arial;
+    background:#e8f5f9;
+}
+
+.circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#6ec6ff;
+    margin:100px auto;
+    animation: breathe 8s infinite;
+}
+
+@keyframes breathe{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.5);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Breathing Relaxation Exercise</h2>
+
+<p>Follow the circle. Inhale when it grows, exhale when it shrinks.</p>
+
+<div class="circle"></div>
+
+</body>
+</html>

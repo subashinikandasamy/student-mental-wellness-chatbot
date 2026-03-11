@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bubble Pop Relaxation</title>
+
+<style>
+
+body{
+    text-align:center;
+    font-family:Arial;
+    background:#e8f5f9;
+    overflow:hidden;
+}
+
+.bubble{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#6ec6ff;
+    position:absolute;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Bubble Pop Relaxation Game</h2>
+<p>Pop the bubbles and relax your mind</p>
+
+<script>
+
+function createBubble(){
+
+    let bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+
+    bubble.style.left = Math.random()*window.innerWidth + "px";
+    bubble.style.top = Math.random()*window.innerHeight + "px";
+
+    bubble.onclick = function(){
+        bubble.remove();
+    }
+
+    document.body.appendChild(bubble);
+
+}
+
+setInterval(createBubble,1000);
+
+</script>
+
+</body>
+</html>
